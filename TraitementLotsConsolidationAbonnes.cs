@@ -19,37 +19,38 @@ namespace M02_UT_ConsolidationAbonnes
 
         public void ConsoliderDonneesDestination()
         {
+            Dictionary <int, Abonne> listeAbonnesSource = new Dictionary<int, Abonne>();
+            Dictionary<int, Abonne> listeAbonnesDestination = new Dictionary<int, Abonne>();
+
+            foreach (Abonne d in this.m_depotDestination.ObtenirAbonnes())
+            {
+                listeAbonnesDestination.Add(d.AbonneId, d);
+            }
             foreach (Abonne s in this.m_depotSource.ObtenirAbonnes())
             {
-                bool abonneTrouve = false;
-                
-                foreach (Abonne d in this.m_depotDestination.ObtenirAbonnes())
-                {
-                    if (s.AbonneId == d.AbonneId)
-                    {
-                        abonneTrouve = true;
-                        if (s.Prenom != d.Prenom)
-                        {
-                            this.m_depotDestination.MettreAjourAbonne(d);
-                        }                       
-                    }
-                }
-                
-                if (!abonneTrouve)
+                if (!listeAbonnesDestination.ContainsKey(s.AbonneId))
                 {
                     this.m_depotDestination.AjouterAbonne(s);
                 }
-            
-            }
-            foreach (Abonne d in this.m_depotDestination.ObtenirAbonnes())
-            {
-                if (!this.m_depotSource.ObtenirAbonnes().Any())
+                else 
                 {
-                    this.m_depotDestination.DesactiverAbonne(d.AbonneId);
+                    if (!s.Equals(listeAbonnesDestination[s.AbonneId]))
+                    {
+                        this.m_depotDestination.MettreAjourAbonne(s);
+                    }
                 }
-            }                   
-        }
+                
+                listeAbonnesSource.Add(s.AbonneId, s);
+            }
 
+            foreach (KeyValuePair<int, Abonne> s in listeAbonnesDestination)
+            {
+                if (!listeAbonnesSource.ContainsKey(s.Key))
+                {
+                    this.m_depotDestination.DesactiverAbonne(s.Value.AbonneId);
+                }
+            }          
+        }
         public IEnumerable<Abonne> ObtenirAbonnes()
         {
             return this.ObtenirAbonnes();
