@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M02_UT_ConsolidationAbonnes", "M02_UT_ConsolidationAbonnes\M02_UT_ConsolidationAbonnes.csproj", "{25777FFE-DCED-4B84-9565-684F68138D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_M02_UT_ConsolidationAbonnes", "Tests_M02_UT_ConsolidationAbonnes\Tests_M02_UT_ConsolidationAbonnes.csproj", "{50C9139D-1B2B-4BF6-94F0-323023BA527D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25777FFE-DCED-4B84-9565-684F68138D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25777FFE-DCED-4B84-9565-684F68138D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25777FFE-DCED-4B84-9565-684F68138D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25777FFE-DCED-4B84-9565-684F68138D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C9139D-1B2B-4BF6-94F0-323023BA527D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C9139D-1B2B-4BF6-94F0-323023BA527D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C9139D-1B2B-4BF6-94F0-323023BA527D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C9139D-1B2B-4BF6-94F0-323023BA527D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9AE0387-38CE-470B-BB0E-B767F238FC31}
+	EndGlobalSection
+EndGlobal
