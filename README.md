@@ -1,4 +1,5 @@
-### Exercice 1 - Questionnaire
+## Exercice 1 
+### Questionnaire
 ***
 
 Reprendre le code présent dans le même répertoire que le fichier d'exercices.
