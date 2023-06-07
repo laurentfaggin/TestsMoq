@@ -97,7 +97,7 @@ namespace Tests_M02_UT_ConsolidationAbonnes
             mockSource.Verify(s => s.ObtenirAbonnes(), Times.AtLeastOnce());
             mockSource.VerifyNoOtherCalls();
             mockDestination.Verify(d => d.ObtenirAbonnes(), Times.AtLeastOnce());
-            mockDestination.Verify(d => d.MettreAjourAbonne(abonneDestination), Times.Once());
+            mockDestination.Verify(d => d.MettreAjourAbonne(abonneSource), Times.Once());
             mockDestination.VerifyNoOtherCalls();
         }
 
@@ -124,9 +124,9 @@ namespace Tests_M02_UT_ConsolidationAbonnes
 
             mockSource.Verify(s => s.ObtenirAbonnes(), Times.AtLeastOnce());
             mockSource.VerifyNoOtherCalls();
-            mockDestination.Verify(d => d.ObtenirAbonnes(), Times.AtLeastOnce());
-            mockDestination.Verify(d => d.AjouterAbonne(abonneSource2), Times.Once());
-            mockDestination.Verify(d => d.MettreAjourAbonne(abonneDestination1), Times.Once());;
+            mockDestination.Verify(d1 => d1.ObtenirAbonnes(), Times.AtLeastOnce());
+            mockDestination.Verify(d2 => d2.AjouterAbonne(abonneSource2), Times.Once());
+            mockDestination.Verify(d3 => d3.MettreAjourAbonne(abonneSource1), Times.Once());;
             mockDestination.VerifyNoOtherCalls();
         }
     }
